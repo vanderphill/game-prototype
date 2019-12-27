@@ -1,0 +1,215 @@
+from tkinter import *
+import random
+root = Tk()
+root.title("game prototype")
+
+X = 20
+Y = 10
+points = 0
+targetX = random.randint(1,40)
+targetY = random.randint(1,20)
+
+def Target():
+        global points
+        global targetX
+        global targetY
+        global score
+        global target
+        points += 1
+        targetX = random.randint(1, 40)
+        targetY = random.randint(1, 20)
+        target.destroy()
+        target = Label(topFrame,text="X",fg="red")
+        target.grid(row=targetY,column=targetX)
+        score.destroy()
+        score = Label(bottomFrame,text="Score : " + str(points),bg="green")
+        score.grid(row=1,column=5)
+
+def move():
+    global cursor
+    cursor.destroy()
+    cursor = Label(topFrame, text="o", bg="black")
+    cursor.grid(row=Y, column=X)
+
+def up():
+    global Y
+    if  Y > 1:
+        Y -= 1
+        move()
+    if X == targetX and Y == targetY:
+        Target()
+
+
+def down():
+    global Y
+    if Y < 20:
+        Y +=1
+        move()
+    if X == targetX and Y == targetY:
+        Target()
+
+def left():
+    global X
+    if X > 1:
+        X -=1
+        move()
+    if X == targetX and Y == targetY:
+        Target()
+def right():
+    global X
+    if X < 40:
+        X +=1
+        move()
+    if X == targetX and Y == targetY:
+        Target()
+
+topFrame = Frame(root, bg="white")
+bottomFrame = Frame(root, bg="dark green")
+topFrame.pack()
+bottomFrame.pack()
+
+upButton = Button(bottomFrame,text="^",command= up)
+downButton = Button(bottomFrame,text="v",command= down)
+leftButton = Button(bottomFrame,text="<",command= left)
+rightButton = Button(bottomFrame,text=">",command= right)
+
+upButton.grid(row=0,column=1)
+downButton.grid(row=2,column=1)
+leftButton.grid(row=1,column=0)
+rightButton.grid(row=1,column=4)
+
+grid1t = Label(topFrame,text=" ")
+grid2t = Label(topFrame,text=" ")
+grid3t = Label(topFrame,text=" ")
+grid4t = Label(topFrame,text=" ")
+grid5t = Label(topFrame,text=" ")
+grid6t = Label(topFrame,text=" ")
+grid7t = Label(topFrame,text=" ")
+grid8t = Label(topFrame,text=" ")
+grid9t = Label(topFrame,text=" ")
+grid0t = Label(topFrame,text=" ")
+grid11t = Label(topFrame,text=" ")
+grid12t = Label(topFrame,text=" ")
+grid13t = Label(topFrame,text=" ")
+grid14t = Label(topFrame,text=" ")
+grid15t = Label(topFrame,text=" ")
+grid16t = Label(topFrame,text=" ")
+grid17t = Label(topFrame,text=" ")
+grid18t = Label(topFrame,text=" ")
+grid19t = Label(topFrame,text=" ")
+grid10t = Label(topFrame,text=" ")
+grid21t = Label(topFrame,text=" ")
+grid22t = Label(topFrame,text=" ")
+grid23t = Label(topFrame,text=" ")
+grid24t = Label(topFrame,text=" ")
+grid25t = Label(topFrame,text=" ")
+grid26t = Label(topFrame,text=" ")
+grid27t = Label(topFrame,text=" ")
+grid28t = Label(topFrame,text=" ")
+grid29t = Label(topFrame,text=" ")
+grid20t = Label(topFrame,text=" ")
+grid31t = Label(topFrame,text=" ")
+grid32t = Label(topFrame,text=" ")
+grid33t = Label(topFrame,text=" ")
+grid34t = Label(topFrame,text=" ")
+grid35t = Label(topFrame,text=" ")
+grid36t = Label(topFrame,text=" ")
+grid37t = Label(topFrame,text=" ")
+grid38t = Label(topFrame,text=" ")
+grid39t = Label(topFrame,text=" ")
+grid30t = Label(topFrame,text=" ")
+
+
+
+grid1s = Label(topFrame,text=" ")
+grid2s = Label(topFrame,text=" ")
+grid3s = Label(topFrame,text=" ")
+grid4s = Label(topFrame,text=" ")
+grid5s = Label(topFrame,text=" ")
+grid6s = Label(topFrame,text=" ")
+grid7s = Label(topFrame,text=" ")
+grid8s = Label(topFrame,text=" ")
+grid9s = Label(topFrame,text=" ")
+grid0s = Label(topFrame,text=" ")
+grid11s = Label(topFrame,text=" ")
+grid12s = Label(topFrame,text=" ")
+grid13s = Label(topFrame,text=" ")
+grid14s = Label(topFrame,text=" ")
+grid15s = Label(topFrame,text=" ")
+grid16s = Label(topFrame,text=" ")
+grid17s = Label(topFrame,text=" ")
+grid18s = Label(topFrame,text=" ")
+grid19s = Label(topFrame,text=" ")
+grid10s = Label(topFrame,text=" ")
+
+
+grid1t.grid(row=0,column=1)
+grid2t.grid(row=0,column=2)
+grid3t.grid(row=0,column=3)
+grid4t.grid(row=0,column=4)
+grid5t.grid(row=0,column=5)
+grid6t.grid(row=0,column=6)
+grid7t.grid(row=0,column=7)
+grid8t.grid(row=0,column=8)
+grid9t.grid(row=0,column=9)
+grid0t.grid(row=0,column=10)
+grid11t.grid(row=0,column=11)
+grid12t.grid(row=0,column=12)
+grid13t.grid(row=0,column=13)
+grid14t.grid(row=0,column=14)
+grid15t.grid(row=0,column=15)
+grid16t.grid(row=0,column=16)
+grid17t.grid(row=0,column=17)
+grid18t.grid(row=0,column=18)
+grid19t.grid(row=0,column=19)
+grid10t.grid(row=0,column=20)
+grid21t.grid(row=0,column=21)
+grid22t.grid(row=0,column=22)
+grid23t.grid(row=0,column=23)
+grid24t.grid(row=0,column=24)
+grid25t.grid(row=0,column=25)
+grid26t.grid(row=0,column=26)
+grid27t.grid(row=0,column=27)
+grid28t.grid(row=0,column=28)
+grid29t.grid(row=0,column=29)
+grid20t.grid(row=0,column=30)
+grid31t.grid(row=0,column=31)
+grid32t.grid(row=0,column=32)
+grid33t.grid(row=0,column=33)
+grid34t.grid(row=0,column=34)
+grid35t.grid(row=0,column=35)
+grid36t.grid(row=0,column=36)
+grid37t.grid(row=0,column=37)
+grid38t.grid(row=0,column=38)
+grid39t.grid(row=0,column=39)
+grid30t.grid(row=0,column=40)
+
+grid1s.grid(row=1,column=0)
+grid2s.grid(row=2,column=0)
+grid3s.grid(row=3,column=0)
+grid4s.grid(row=4,column=0)
+grid5s.grid(row=5,column=0)
+grid6s.grid(row=6,column=0)
+grid7s.grid(row=7,column=0)
+grid8s.grid(row=8,column=0)
+grid9s.grid(row=9,column=0)
+grid0s.grid(row=10,column=0)
+grid11s.grid(row=11,column=0)
+grid12s.grid(row=12,column=0)
+grid13s.grid(row=13,column=0)
+grid14s.grid(row=14,column=0)
+grid15s.grid(row=15,column=0)
+grid16s.grid(row=16,column=0)
+grid17s.grid(row=17,column=0)
+grid18s.grid(row=18,column=0)
+grid19s.grid(row=19,column=0)
+grid10s.grid(row=20,column=0)
+
+cursor = Label(topFrame,text="O",bg="black")
+cursor.grid(row=Y,column=X)
+target = Label(topFrame, text="X", fg="red")
+target.grid(row=targetY, column=targetX)
+score = Label(bottomFrame, text="Score : " + str(points), bg="green")
+score.grid(row=1, column=5)
+
+root.mainloop()
